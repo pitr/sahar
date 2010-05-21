@@ -17,3 +17,7 @@ task :push do
   sh "git push origin master"
   sh "git push heroku master"
 end
+
+task :setup_heroku do
+  sh "heroku config:add COUCHDB_KEY=sldkjflkdjsafjdslajfsadjfk COUCHDB_PASSWORD=JLDKjfkadsjfka232js23ffa54FJDs COUCHDB_DB=http://username.cloudant.com:5984/mydb/"
+end

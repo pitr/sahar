@@ -1,12 +1,13 @@
 require 'sinatra'
 require 'rack-flash'
-require 'yaml'
 
 configure do
   enable :sessions
   use Rack::Flash
   
-  @config = YAML::load(File.open("config.yaml"))
+  @key = ENV['COUCHDB_KEY']
+  @password = ENV['COUCHDB_PASSWORD']
+  @db = ENV['COUCHDB_DB']
 end
 
 get '/' do
