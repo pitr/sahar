@@ -12,3 +12,8 @@ Spec::Rake::SpecTask.new do |t|
   t.spec_opts = ['--options', "spec/spec.opts"]
   t.spec_files = FileList['spec/**/*_spec.rb']
 end
+
+task :push do
+  sh "git push origin master"
+  sh "git push heroku master"
+end
